@@ -1,6 +1,10 @@
 syntax on
 
 call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-startify'
 call plug#end()
 
@@ -47,6 +51,7 @@ augroup autoindent
   autocmd BufWritePre *.rb,*.css,*scss,*.html,*.js,Gemfile :normal migg=G`i
 augroup End
 
+  let g:airline_theme='tomorrow'
 
     " Now we can turn our filetype functionality back on
     filetype plugin indent on
