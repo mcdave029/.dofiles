@@ -6,6 +6,9 @@ Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-startify'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 call plug#end()
 
 set background=light
@@ -30,12 +33,9 @@ call vundle#rc()
 map <C-b> :NERDTreeToggle<CR>
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
-Plugin 'vim-l9'
-Plugin 'vim-fuzzyfinder'
 Plugin 'gmarik/vundle'
 Plugin 'Chiel192/vim-autoformat'
 " We could also add repositories with a ".git" extension
-Plugin 'scrooloose/nerdtree.git'
 
 " To get plugins from Vim Scripts, you can reference the plugin
 " by name as it appears on the site
