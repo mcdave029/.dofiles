@@ -27,6 +27,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+map <C-b> :NERDTreeToggle<CR>
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
 Plugin 'vim-l9'
