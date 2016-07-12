@@ -52,6 +52,9 @@ augroup autoindent
   autocmd BufWritePre *.rb,*.css,*scss,*.html,*.js,Gemfile :normal migg=G`i
 augroup End
 
+let NERDTreeShowHidden=1
+let g:ctrlp_show_hidden=1
+
   let g:airline_theme='tomorrow'
 
     " Now we can turn our filetype functionality back on
