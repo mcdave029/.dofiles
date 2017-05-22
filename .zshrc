@@ -1,10 +1,12 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/mdvaldecantos/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="fino"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -51,12 +53,11 @@ ZSH_THEME="fino"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+source $ZSH/oh-my-zsh.sh
+
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -123,13 +124,13 @@ function work_in_progress() {
 # (sorted alphabetically)
 #
 
-alias pbcopy='xclip -selection clipboard'
-alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
-alias rdb="rake db:drop && rake db:create && rake db:migrate && rake db:seed"
+alias ta="tmux a"
+alias tns="tmux new -s"
+alias restartpg="pg_ctl -D /usr/local/var/postgres stop -s -m fast && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias vi="vim"
+alias rdb="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:seed"
+alias rdbtest="bundle exec rake db:drop test && bundle exec rake db:create test && bundle exec rake db:migrate test && bundle exec rake db:seed test"
 alias gclog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias v2="cap stagingv2 deploy && cap stagingv2 unicorn:stop && cap stagingv2 unicorn:start"
-alias android="/home/dave/android-studio/bin/studio.sh"
-alias aptup="sudo apt-get update && sudo apt-get upgrade"
 
 alias g='git'
 
@@ -310,13 +311,9 @@ alias gvt='git verify-tag'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"'
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+export PATH=/usr/local/php5/bin:$PATH
+PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export NVM_DIR="/home/dave/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-
-export PATH=$HOME/bin:$PATH
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin Path to your oh-my-zsh installation."
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

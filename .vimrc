@@ -1,20 +1,11 @@
 syntax on
 
-call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-startify'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-call plug#end()
-
 set background=light
+set laststatus=2
 set t_Co=256
 colorscheme moonshine
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 set number
 set cindent
 set nocompatible
@@ -25,55 +16,56 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+call plug#begin('~/.vim/plugged')
+  Plug 'airblade/vim-gitgutter'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'tpope/vim-fugitive'
+  Plug 'mhinz/vim-startify'
+  Plug 'mattn/emmet-vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+  Plug 'mileszs/ack.vim'
+  Plug 'vim-syntastic/syntastic'
+call plug#end()
 
 map <C-b> :NERDTreeToggle<CR>
-" This is the Vundle package, which can be found on GitHub.
-" For GitHub repos, you specify plugins using the
-Plugin 'gmarik/vundle'
-Plugin 'Chiel192/vim-autoformat'
-" We could also add repositories with a ".git" extension
-
-" To get plugins from Vim Scripts, you can reference the plugin
-" by name as it appears on the site
-Plugin 'Buffergator'
-
-Plugin 'MarkdownFootnotes'
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'mattn/emmet-vim'
+map <C-p> :FZF<CR>
 
 augroup autoindent
   au!
-  autocmd BufWritePre *.rb,*.css,*scss,*.html,*.js,Gemfile :normal migg=G`i
+  autocmd BufWritePre *.rb,*.html,*.js,Gemfile :normal migg=G`i
 augroup End
 
 let NERDTreeShowHidden=1
 let g:ctrlp_show_hidden=1
 
-  let g:airline_theme='tomorrow'
+let g:airline_theme='tomorrow'
 
-    " Now we can turn our filetype functionality back on
-    filetype plugin indent on
+let g:startify_list_order = [
+      \ ['   MRU'],           'files' ,
+      \ ['   MRU '.getcwd()], 'dir',
+      \ ]
 
-    let g:startify_list_order = [
-          \ ['   MRU'],           'files' ,
-          \ ['   MRU '.getcwd()], 'dir',
-          \ ]
+let g:startify_skiplist = [
+      \ 'COMMIT_EDITMSG',
+      \ 'bundle/.*/doc',
+      \ ]
 
-    let g:startify_skiplist = [
-          \ 'COMMIT_EDITMSG',
-          \ 'bundle/.*/doc',
-          \ ]
+let g:startify_change_to_dir          = 0
+let g:startify_enable_special         = 0
+let g:startify_files_number           = 8
+let g:startify_session_autoload       = 1
+let g:startify_session_delete_buffers = 1
+let g:startify_session_persistence    = 1
+let g:startify_update_oldfiles        = 1
+let g:startify_use_env                = 1
 
-    let g:startify_change_to_dir          = 0
-    let g:startify_enable_special         = 0
-    let g:startify_files_number           = 8
-    let g:startify_session_autoload       = 1
-    let g:startify_session_delete_buffers = 1
-    let g:startify_session_persistence    = 1
-    let g:startify_update_oldfiles        = 1
-    let g:startify_use_env                = 1
+" Syntastic configuration
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop']
