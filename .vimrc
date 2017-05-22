@@ -42,6 +42,7 @@ augroup End
 let NERDTreeShowHidden=1
 let g:ctrlp_show_hidden=1
 
+let g:airline_powerline_fonts = 1
 let g:airline_theme='tomorrow'
 
 let g:startify_list_order = [
