@@ -64,9 +64,16 @@ let g:startify_session_persistence    = 1
 let g:startify_update_oldfiles        = 1
 let g:startify_use_env                = 1
 
+" Showing syntax highlight group in statusline
+function! SyntaxItem()
+  return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+
 " Syntastic configuration
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop']
+let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_css_checkers = ['csslint']
