@@ -3,7 +3,6 @@ syntax on
 set background=light
 set laststatus=2
 set t_Co=256
-colorscheme moonshine
 
 set clipboard=unnamed
 set number
@@ -18,6 +17,7 @@ set shiftwidth=2
 set expandtab
 
 call plug#begin('~/.vim/plugged')
+  Plug 'KKPMW/moonshine-vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'tpope/vim-fugitive'
@@ -30,6 +30,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mileszs/ack.vim'
   Plug 'vim-syntastic/syntastic'
 call plug#end()
+
+colorscheme moonshine_lowcontrast
 
 map <C-b> :NERDTreeToggle<CR>
 map <C-p> :FZF<CR>
