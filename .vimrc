@@ -1,5 +1,6 @@
 syntax on
 
+set noswapfile
 set background=light
 set laststatus=2
 set t_Co=256
@@ -16,6 +17,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+set guifont=<FONT_NAME>:h<FONT_SIZE>
+set guifont=DroidSansMono_Nerd_Font:h11
+
 call plug#begin('~/.vim/plugged')
   Plug 'KKPMW/moonshine-vim'
   Plug 'airblade/vim-gitgutter'
@@ -29,6 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
   Plug 'mileszs/ack.vim'
   Plug 'vim-syntastic/syntastic'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 colorscheme moonshine_lowcontrast

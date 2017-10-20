@@ -124,6 +124,8 @@ function work_in_progress() {
 # (sorted alphabetically)
 #
 
+alias mysql="/Applications/MAMP/Library/bin/mysql"
+alias sshsync="rsync -avzhe ssh"
 alias ta="tmux a"
 alias tns="tmux new -s"
 alias restartpg="pg_ctl -D /usr/local/var/postgres stop -s -m fast && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
