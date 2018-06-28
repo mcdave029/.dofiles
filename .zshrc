@@ -124,7 +124,21 @@ function work_in_progress() {
 # (sorted alphabetically)
 #
 
-alias mysql="/Applications/MAMP/Library/bin/mysql"
+function stoproc() { 
+  local pid=3000
+  if [ ${#1} != 0 ]; then
+    pid=$1
+  fi
+  kill -9 $(lsof -i tcp:$pid -t) 
+}
+
+function clean_xcode() {
+  rm -rf ~/Library/Developer/Xcode/Archives/*
+  rm -rf ~/Library/Developer/Xcode/DerivedData/*-*
+}
+
+alias recordsim="xcrun simctl io booted recordVideo --type=mp4 ~/Desktop/$(date +%d-%m-%yT%H-%M-%S).mp4"
+alias formatios='"/Users/mcdave/Developer/Voittle/config/spacecommander"/format-objc-files.sh -s'
 alias sshsync="rsync -avzhe ssh"
 alias ta="tmux a"
 alias tns="tmux new -s"
@@ -315,7 +329,9 @@ alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"'
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export PATH=/usr/local/php5/bin:$PATH
+export PATH=/Applications/MAMP/bin/php/php7.2.1/bin:$PATH
+export PATH=/Applications/MAMP/Library/bin:$PATH
+export PATH="$HOME/.rbenv/shims:$PATH"
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

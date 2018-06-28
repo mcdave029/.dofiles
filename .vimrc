@@ -34,17 +34,24 @@ call plug#begin('~/.vim/plugged')
   Plug 'mileszs/ack.vim'
   Plug 'vim-syntastic/syntastic'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'valloric/MatchTagAlways'
+  Plug 'posva/vim-vue'
+  Plug 'JamshedVesuna/vim-markdown-preview'
+  Plug 'wakatime/vim-wakatime'
+  Plug 'milch/vim-fastlane'
 call plug#end()
 
 colorscheme moonshine_lowcontrast
 
-map <C-b> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 map <C-p> :FZF<CR>
+map <C-j> :MtaJumpToOtherTag<cr>
 
-augroup autoindent
-  au!
-  autocmd BufWritePre *.rb,*.html,*.js,Gemfile :normal migg=G`i
-augroup End
+"augroup autoindent
+"  au!
+"  autocmd BufWritePre *.rb,*.html,*.js,Gemfile :normal migg=G`i
+"augroup End
 
 let NERDTreeShowHidden=1
 let g:ctrlp_show_hidden=1
@@ -81,7 +88,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_w = 0
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop']
-"let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_vue_checkers = ['eslint', 'eslint-plugin-vue']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop']
+let g:syntastic_scss_checkers = ['scss_lint']
 "let g:syntastic_css_checkers = ['csslint']
