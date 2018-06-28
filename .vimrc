@@ -17,9 +17,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-set guifont=<FONT_NAME>:h<FONT_SIZE>
-set guifont=DroidSansMono_Nerd_Font:h11
-
 call plug#begin('~/.vim/plugged')
   Plug 'KKPMW/moonshine-vim'
   Plug 'airblade/vim-gitgutter'
@@ -40,6 +37,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'JamshedVesuna/vim-markdown-preview'
   Plug 'wakatime/vim-wakatime'
   Plug 'milch/vim-fastlane'
+  Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 colorscheme moonshine_lowcontrast
@@ -94,3 +92,5 @@ let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop']
 let g:syntastic_scss_checkers = ['scss_lint']
 "let g:syntastic_css_checkers = ['csslint']
+
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
