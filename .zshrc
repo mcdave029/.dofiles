@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH.GG
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -137,6 +137,7 @@ function clean_xcode() {
   rm -rf ~/Library/Developer/Xcode/DerivedData/*-*
 }
 
+alias lc='colorls -lA --sd'
 alias recordsim="xcrun simctl io booted recordVideo --type=mp4 ~/Desktop/$(date +%d-%m-%yT%H-%M-%S).mp4"
 alias formatios='"/Users/mcdave/Developer/Voittle/config/spacecommander"/format-objc-files.sh -s'
 alias sshsync="rsync -avzhe ssh"
@@ -146,7 +147,6 @@ alias restartpg="pg_ctl -D /usr/local/var/postgres stop -s -m fast && pg_ctl -D 
 alias vi="vim"
 alias rdb="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:seed"
 alias rdbtest="bundle exec rake db:drop test && bundle exec rake db:create test && bundle exec rake db:migrate test && bundle exec rake db:seed test"
-alias gclog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias g='git'
 

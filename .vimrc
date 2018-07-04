@@ -37,7 +37,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'JamshedVesuna/vim-markdown-preview'
   Plug 'wakatime/vim-wakatime'
   Plug 'milch/vim-fastlane'
-  Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 colorscheme moonshine_lowcontrast
