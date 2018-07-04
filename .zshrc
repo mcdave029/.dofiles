@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mcdave/.oh-my-zsh
+export ZSH="/Users/mcdavevaldecantos/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -144,7 +144,8 @@ alias sshsync="rsync -avzhe ssh"
 alias ta="tmux a"
 alias tns="tmux new -s"
 alias restartpg="pg_ctl -D /usr/local/var/postgres stop -s -m fast && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias vi="vim"
+alias vi="/usr/local/bin/vim"
+alias vim="/usr/local/bin/vim"
 alias rdb="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:seed"
 alias rdbtest="bundle exec rake db:drop test && bundle exec rake db:create test && bundle exec rake db:migrate test && bundle exec rake db:seed test"
 

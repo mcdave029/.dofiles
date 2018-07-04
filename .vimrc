@@ -1,5 +1,6 @@
 syntax on
 
+set encoding=UTF-8
 set noswapfile
 set background=light
 set laststatus=2
