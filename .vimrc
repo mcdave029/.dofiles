@@ -42,6 +42,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'milch/vim-fastlane'
   Plug 'scrooloose/nerdcommenter'
   Plug 'leafgarland/typescript-vim'
+  Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 colorscheme moonshine_lowcontrast
