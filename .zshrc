@@ -137,6 +137,8 @@ function clean_xcode() {
   rm -rf ~/Library/Developer/Xcode/DerivedData/*-*
 }
 
+alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias be="bundle exec"
 alias lc='colorls -lA --sd'
 alias recordsim="xcrun simctl io booted recordVideo --type=mp4 ~/Desktop/$(date +%d-%m-%yT%H-%M-%S).mp4"
