@@ -158,6 +158,7 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gapa='git add --patch'
 
+alias gblist="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbda='git branch --merged | command grep -vE "^(\*|\s*master\s*$)" | command xargs -n 1 git branch -d'
@@ -333,8 +334,6 @@ alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"'
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export PATH=/Applications/MAMP/bin/php/php7.2.1/bin:$PATH
-export PATH=/Applications/MAMP/Library/bin:$PATH
 export PATH="$HOME/.rbenv/shims:$PATH"
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
@@ -342,3 +341,5 @@ PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export LC_ALL=en_US.UTF-8
