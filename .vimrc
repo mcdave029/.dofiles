@@ -94,10 +94,10 @@ let g:syntastic_check_on_w = 0
 let g:syntastic_vue_checkers = ['eslint', 'eslint-plugin-vue']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop']
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_haml_checkers = ['haml_lint']
-"let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_css_checkers = ['csslint']
 
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 
