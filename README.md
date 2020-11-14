@@ -10,6 +10,7 @@ Download the repo and start symlinking all the configuration files in each steps
 * Integrate [tmux](https://www.iterm2.com/documentation-tmux-integration.html) in Iterm2.
 * Install [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh).
 * Install latest [vim](https://www.vim.org/) version.
+* Install [Commitizen](https://eidson.info/post/using-conventional-commit-messages-globally) globally.
 
 ### iOS Development
 * Install [Xcode](https://stackoverflow.com/a/10335943).

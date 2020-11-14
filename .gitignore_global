@@ -1,0 +1,6 @@
+.DS_Store
+
+# asdf version manager local set version
+.tool-versions
+
+node_modules/
