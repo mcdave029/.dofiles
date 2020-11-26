@@ -11,6 +11,8 @@ Download the repo and start symlinking all the configuration files in each steps
 * Install [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh).
 * Install latest [vim](https://www.vim.org/) version.
 * Install [Commitizen](https://eidson.info/post/using-conventional-commit-messages-globally) globally.
+* Install [Nerd Font Space](https://www.nerdfonts.com) for Non-ASCII fonts.
+* Iterm2 Scheme [After Glow](https://iterm2colorschemes.com).
 
 ### iOS Development
 * Install [Xcode](https://stackoverflow.com/a/10335943).

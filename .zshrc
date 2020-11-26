@@ -161,8 +161,6 @@ alias sshsync="rsync -avzhe ssh"
 alias ta="tmux a"
 alias tns="tmux new -s"
 alias restartpg="pg_ctl -D /usr/local/var/postgres stop -s -m fast && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias vi="/usr/local/bin/vim"
-alias vim="/usr/local/bin/vim"
 alias rdb="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:seed"
 alias rdbtest="bundle exec rake db:drop test && bundle exec rake db:create test && bundle exec rake db:migrate test && bundle exec rake db:seed test"
 
@@ -353,8 +351,7 @@ export LC_ALL=en_US.UTF-8
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-. $(brew --prefix asdf)/asdf.sh
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 export PATH="/usr/local/sbin:$PATH"
-# https://stackoverflow.com/a/40333409
-export PATH="$PATH:$(yarn global bin)"
